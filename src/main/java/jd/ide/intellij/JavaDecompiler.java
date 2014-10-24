@@ -24,7 +24,10 @@ public class JavaDecompiler {
         String platform = System.getProperty("os.name").toLowerCase();
         if(isWindows(platform)) {
             os = "win32";
-            ext = "dll"; } else if(isMac(platform)) {
+            ext = "dll";
+            path = "/%s/%s/jd-intellij.%s"; //Windows DLLs
+            
+        } else if(isMac(platform)) {
             os = "macosx";
             ext = "jnilib";
         } else if(isLinux(platform)) {
